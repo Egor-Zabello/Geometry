@@ -2,11 +2,15 @@ package logic;
 
 import entity.Point;
 import entity.Quadrangle;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
+    private static final Logger logger = LogManager.getLogger(Calculator.class.getName());
 
     public List<Double> getCordsOfShape(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourthPoint){
         double firstX=firstPoint.getX();
@@ -57,7 +61,7 @@ public class Calculator {
        double thirdEdge= edges.get(2);
        double fourthEdge=edges.get(3);
 
-
+       logger.info("perimeter was calculated");
        return firsEdge+secondEdge+thirdEdge+fourthEdge;
    }
 
